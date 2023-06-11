@@ -109,30 +109,21 @@
     </p>
     <p><strong>An important side effect in V8 (Chrome, Edge, Opera) is that such variable will become unavailable in debugging.</strong></p>
 
+    <h1>Currying</h1>
+    <p>Currying is an advanced technique of working with functions. It’s used not only in JavaScript, but in other languages as well.</p>
+     
+    <p>More advanced implementations of currying, such as _.curry from lodash library, return a wrapper that allows a function to be called both normally and partially:</p>
+    <li>1. function sum(a, b) {</li>
+    <li>2. return a + b;</li>
+    <li>3. }</li>
+    <li>4. </li>
+    <li>5. let curriedSum = _.curry(sum); // using _.curry from lodash library</li>
+    <li>6. </li>
+    <li>7. let curriedSum = _.curry(sum); // using _.curry from lodash library</li>
+    <li>8. alert( curriedSum(1)(2) ); // 3, called partially</li>
     <li><a href="https://javascript.info/closure">Variable Scope, Closure</a></li>
     <li><a href="https://javascript.info/currying-partials">Currying</a></li>
-    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics"> Web APIs: Drawing Graphics</a></li>
-    
-    
-    
-    
-    
-    
-    
-    
-    <hr>
-        
-    <p>My three major questions in the week-02 learning are:</p>
-<li>1. What is debugging and why is it important? (Answered)</li>
-<li>2. What are some common debugging techniques or strategies?</li>
-<li>3. How do I debug a specific error or issue in my code?</li>
-
-<li><a href="https://javascript.info/debugging-chrome">Debugging in the browser</a></li>
-<li><a href="https://javascript.info/coding-style"></a>Coding Style</a></li>
-<li><a href="https://javascript.info/comments"></a>Comments</a></li>
-<li><a href="https://javascript.info/ninja-code"></a>Ninja code</a></li>
-<li><a href="https://javascript.info/testing-mocha"></a>Automated testing with Mocha</a></li>
-<li><a href="https://javascript.info/polyfills"></a>Polyfills and transpilers</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics"> Web APIs: Drawing Graphics</a></li>  
 </main>
     <footer> &copy; 2023 | Portfolio | Joel Ndiba Mwaura </footer>
 </body>
