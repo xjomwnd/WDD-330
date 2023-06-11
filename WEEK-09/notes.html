@@ -38,63 +38,56 @@
     <li>return firstName + " " + lastName; }</li>
     <li>alert( "Hello, " + getFullName() );</li>
     <li>alert( "Bye, " + getFullName() ); }</li>
+    <p>Here the nested function getFullName() is made for convenience. It can access the outer variables and so can return the full name. Nested functions are quite common in JavaScript.</p>
+    <p>What’s much more interesting, a nested function can be returned: either as a property of a new object or as a result by itself. It can then be used somewhere else. No matter where, it still has access to the same outer variables.</p>
+    <p>Below, makeCounter creates the “counter” function that returns the next number on each invocation:</p>
+    <li>functionmakeCounter(){</li>
+    <li>letcount =0;</li>
 
+    <li>returnfunction(){</li>
+    <li>returncount++;};</li>
+    <li>}</li>
 
-
-
-       <hr>
+    <li>letcounter =makeCounter();</li>
+    <li>alert(counter());// 0
+    </li>
+    <li>alert(counter());// 1
+    </li>
+    <li>alert(counter());// 2
+    </li>
+    
+    <p>Despite being simple, slightly modified variants of that code have practical uses, for instance, as a random number generator to generate random values for automated tests.</p>
+    <p>How does this work? If we create multiple counters, will they be independent? What’s going on with the variables here?</p>
+    <p>Understanding such things is great for the overall knowledge of JavaScript and beneficial for more complex scenarios. So let’s go a bit in-depth.</p>
+    
+    <h2>Lexical Environment</h2>
+    <p>For clarity, the explanation is split into multiple steps.</p>
+    
+    <h2>Step 1. Variables</h2>
+    <p>In JavaScript, every running function, code block {...}, and the script as a whole have an internal (hidden) associated object known as the Lexical Environment.</p>
+    <p>The Lexical Environment object consists of two parts:</p>
+    <li>1. Environment Record – an object that stores all local variables as its properties (and some other information like the value of this).</li>
+    <li>2. A reference to the outer lexical environment, the one associated with the outer code.</li>
+    <p><strong>A “variable” is just a property of the special internal object, Environment Record. “To get or change a variable” means “to get or change a property of that object”.</strong></p>
+       
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <hr>
         
     <p>My three major questions in the week-02 learning are:</p>
 <li>1. What is debugging and why is it important? (Answered)</li>
 <li>2. What are some common debugging techniques or strategies?</li>
 <li>3. How do I debug a specific error or issue in my code?</li>
-<p>In week-02 lesson, all of the assigned readings will be from the <a href="https://javascript.info/"><strong>Modern JavaScript Tutorial (javascript.info) site.</strong></a>
-</p>
-<h3>Tips</h3>
-<li>Read for understanding, not completion.</li>
-<li>Don't skip the code examples! Make sure to spend time reviewing these. With the book              we are using you can actually interact with the code samples directly.</li>
-<li>   - Take good notes! One of the most important things that you can include in your notes    are* questions that arise in your mind as you read. 
-    From<a href="https://byui-cit.github.io/wdd330/prepare/v3/week02.html"> <strong>Week-02 learning</strong></a></li>
-<h3>An Introduction to JavaScript</h3>
-<p>Why is it called JavaScript?</p>
-<p>When JavaScript was created, it initially had another name: “LiveScript”. But Java was very popular at that time, so it was decided that positioning a new language as a “younger brother” of Java would help.
-</p>
-<p>But as it evolved, JavaScript became a fully independent language with its own specification called ECMAScript, and now it has no relation to Java at all.
-</p>
-<p>Today, JavaScript can execute not only in the browser, but also on the server, or actually on any device that has a special program called the JavaScript engine.
-</p>
-<p>A JavaScript engine is a software component that executes JavaScript code</p>
-<p>JavaScript’s capabilities greatly depend on the environment it’s running in. For instance, Node.js supports functions that allow JavaScript to read/write arbitrary files, perform network requests, etc.
-</p>
-<h3>What CAN’T in-browser JavaScript do?
-</h3>
-<p>JavaScript’s abilities in the browser are limited to protect the user’s safety. The aim is to prevent an evil webpage from accessing private information or harming the user’s data.
-</p>
-<p>Examples of such restrictions include:
-</p>
-<li>JavaScript on a webpage may not read/write arbitrary files on the hard disk, copy them or execute programs. It has no direct access to OS functions.
-</li>
-<li>Different tabs/windows generally do not know about each other. Sometimes they do, for example when one window uses JavaScript to open the other one. But even in this case, JavaScript from one page may not access the other page if they come from different sites (from a different domain, protocol or port).
-</li>
-<li>This is called the “Same Origin Policy”. To work around that, both pages must agree for data exchange and must contain special JavaScript code that handles it. This limitation is, again, for the user’s safety.
-</li>
-<li>JavaScript can easily communicate over the net to the server where the current page came from. But its ability to receive data from other sites/domains is crippled. Though possible, it requires explicit agreement (expressed in HTTP headers) from the remote side. Once again, that’s a safety limitation.
-</li>
-<h3>What makes JavaScript unique?
-</h3>
-<p>There are at least three great things about JavaScript:
-</p>
-<li>Full integration with HTML/CSS.</li>
-<li>Simple things are done simply.
-</li>
-<li>Supported by all major browsers and enabled by default.
-</li>
-<h3>Code quality
-</h3>
-<p>If we have a lot of JavaScript code, we can put it into a separate file.
-<li><a href="https://javascript.info/">JavaScript Info</a></li>
-<p>Here are the coding practices that we’ll use further in the development.
-</p>
+
 <li><a href="https://javascript.info/debugging-chrome">Debugging in the browser</a></li>
 <li><a href="https://javascript.info/coding-style"></a>Coding Style</a></li>
 <li><a href="https://javascript.info/comments"></a>Comments</a></li>
