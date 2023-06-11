@@ -101,9 +101,16 @@
     <p>A Lexical Environment object dies when it becomes unreachable (just like any other object). In other words, it exists only while there’s at least one nested function referencing it.
     </p>
 
+    <h3>Real-life optimizations</h3>
+    <p>As we’ve seen, in theory while a function is alive, all outer variables are also retained.
+    </p>
+    <p>But in practice, JavaScript engines try to optimize that. They analyze variable usage and if it’s obvious from the code that an outer variable is not used – it is removed.
+    </p>
+    <p><strong>An important side effect in V8 (Chrome, Edge, Opera) is that such variable will become unavailable in debugging.</strong></p>
 
-
-    
+    <li><a href="https://javascript.info/closure">Variable Scope, Closure</a></li>
+    <li><a href="https://javascript.info/currying-partials">Currying</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics"> Web APIs: Drawing Graphics</a></li>
     
     
     
