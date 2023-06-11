@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Week-05 NOTES</h1>
+________________________________________
+<h2>Fetch</h2>
+<p>A typical fetch request consists of two await calls:</p>
+<ol>
+<li>let response = await fetch (url, options); // resolves with response headers</li>
+<li>let result = await response.json(); // read body as json
+Or, without await:
+fetch (url, options)</li>
+<li>then (response => response.json())</li>
+<li>then (result => /* process result */)</li>
+</ol>
+<h2>Fetch: Cross-Origin Requests</h2>
+<p>From the browser point of view, there are two kinds of cross-origin requests: “safe” and all the others.</p>
+<p>“Safe” requests must satisfy the following conditions:</p>
+<p>Method: GET, POST or HEAD.</p>
+<h2>Rest parameters and spread syntax</h2>
+<p>Rest parameters are used to create functions that accept any number of arguments.
+The spread syntax is used to pass an array to functions that normally require a list of many arguments.
+Together they help to travel between a list and an array of parameters with ease.</p>
+How Single-Page Applications Work
+<p>A single-page application (SPA) is a website that re-renders its content in response to navigation actions (e.g., clicking a link) without making a request to the server to fetch new HTML.
+Internal state SPAs are limited because there is only one “entry”. A single entry means that you always start at the root when you enter the application. When you navigate within an internal-state app, there is no external representation. If you want to share some content, the other person loading the app will start at the root, so you’ll have to explain how to get to desired content.
+With location-based SPAs, you can share a link and be confident that anyone opening that link will see the same thing as you because the location is always updating as you navigate (assuming they have the same authorization to view the content).
+<h2>Router</h2>
+Routers are typically used to power route matching within a single-page application. Route matching is done when the location changes, determines which route matches the new location, and then triggers a re-render of the application.
+<h2>History API</h2>
+<p> In-app navigation is performed using the History API. The default click behaviour for anchors is overridden to use pushState() and replaceState() to navigate. A popstate event listener is used to detect navigation with the browser’s forward/back buttons. The click handler and event listener should both inform the router about the navigation to trigger the route matching cycle.
+While most of a single-page application runs on the client, the files do have to come from somewhere. Single-Page Applications and the Server covers the various ways that you can serve a single-page application.
+Mozilla’s web docs have a good overview of the History and Location APIs. If you really want to get your hands dirty, you can read through the WHATWG History spec. This can be very informative, but you may also find yourself clicking through a web of links to discern what all the terminology means.
+</p>
+</body>
+</html>
