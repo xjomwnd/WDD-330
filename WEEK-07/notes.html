@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week07 Notes</title>
+</head>
+<body>
+    <h1>Week07 Notes</h1>
+    <h2>Object methods, "this"</h2>
+    <h3>Object-oriented programming</h3>
+    <p>When we write our code using objects to represent entities, that’s called object-oriented programming, in short: “OOP”.
+    OOP is a big thing, an interesting science of its own. How to choose the right entities? How to organize the interaction between them? That’s architecture, and there are great books on that topic, like “Design Patterns: Elements of Reusable Object-Oriented Software” by E. Gamma, R. Helm, R. Johnson, J. Vissides or “Object-Oriented Analysis and Design with Applications” by G. Booch, and more.
+    <h3>CSS-animations</h3>
+    <p>CSS animations make it possible to do simple animations without JavaScript at all.</p>
+    JavaScript can be used to control CSS animations and make them even better, with little code.</p>
+    <h3>CSS transitions</h3>
+    <p>The idea of CSS transitions is simple. We describe a property and how its changes should be animated. When the property changes, the browser paints the animation.
+    <p>That is, all we need is to change the property, and the fluid transition will be done by the browser.</p>
+    <p>For instance, the CSS below animates changes of background-color for 3 seconds:</p>
+    1.	.animated {
+    2.	transition-property: background-color;
+    3.	transition-duration: 3s;
+    4.	}
+    <p>Now if an element has .animated class, any change of background-color is animated during 3 seconds.</p>
+    <p>Click the button below to animate the background:</p>
+    •  Click me
+    <p>There are 4 properties to describe CSS transitions:</p>
+    <h3>transition-property</h3>
+    <p>In transition-property, we write a list of properties to animate, for instance: left, margin-left, height, color. Or we could write all, which means “animate all properties”.</p>
+    <p>Do note that, there are properties which can not be animated. However, most of the generally used properties are animatable.</p>
+    <h3>transition-duration</h3>
+    <p>In transition-duration we can specify how long the animation should take. The time should be in CSS time format: in seconds s or milliseconds ms.</p>
+    <h3>transition-delay</h3>
+    <p>In transition-delay we can specify the delay before the animation. For instance, if transition-delay is 1s and transition-duration is 2s, then the animation starts 1 second after the property change and the total duration will be 2 seconds.
+    <p>Negative values are also possible. Then the animation is shown immediately, but the starting point of the animation will be after given value (time). For example, if transition-delay is -1s and transition-duration is 2s, then animation starts from the halfway point and total duration will be 1 second.
+    <h3>transition-timing-function</h3>
+    <p>The timing function describes how the animation process is distributed along its timeline. Will it start slowly and then go fast, or vice versa.</p>
+    <p>It appears to be the most complicated property at first. But it becomes very simple if we devote a bit time to it.</p>
+    <p>That property accepts two kinds of values: a Bezier curve or steps. Let’s start with the curve, as it’s used more often.</p>
+    <h3>Performance</h3>
+    <p>Most CSS properties can be animated, because most of them are numeric values. For instance, width, color, font-size are all numbers. When you animate them, the browser gradually changes these numbers frame by frame, creating a smooth effect. However, not all animations will look as smooth as you’d like, because different CSS properties cost differently to change.</p>
+    <h3>Summary</h3>
+    <p>CSS animations allow smoothly (or step-by-step) animated changes of one or multiple CSS properties.</p>
+    <p>They are good for most animation tasks. We’re also able to use JavaScript for animations, the next chapter is devoted to that.</p>
+    <p>In early examples in this chapter, we animate font-size, left, width, height, etc. In real life projects, we should use transform: scale() and transform: translate() for better performance. The majority of animations can be implemented using CSS as described in this chapter. And the transitionend event allows JavaScript to be run after the animation, so it integrates fine with the code.
+    
+     
+</body>
+</html>

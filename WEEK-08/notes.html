@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Week 8 Notes</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@423&display=swap" rel="stylesheet">
+</head>
+<body>
+   <main>
+    <h1>Week 08 Notes</h1>
+    <h3 class="notes">7 June 2023</h3>
+    <h1>What is JSON Web Token?</h1>
+<p><strong>JSON Web Token (JWT)</strong>is an open standard(RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a <strong>JSON</strong> object. This information can be verified and trusted because it is digitally signed. <strong>JWTs</strong> can be signed using a secret (with<strong> HMAC</strong> algorithm) or a public/private key pair using <strong>RSA.</strong></p>
+<p>Let’s explain some concepts of this definition further.</p>
+<li><strong>Compact:</strong>Because of its size, it can be sent through an URL, POST parameter, or inside an HTTP header. Additionally, due to its size its transmission is fast.</li>
+<li><strong>Self-contained:</strong>The payload contains all the required information about the user, to avoid querying the database more than once.</li>
+<h1>When should you use JSON Web Tokens?</h1>
+<p>These are some scenarios where JSON Web Tokens are useful:</p>
+<li><strong>Authentication:</strong>This is the typical scenario for using JWT, once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used among systems of different domains.</li>
+<li><strong>Information Exchange:</strong>JWTs are a good way of securely transmitting information between parties, because as they can be signed, for example using a public/private key pair, you can be sure that the sender is who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn’t changed.</li>
+<p><strong>Which is the JSON Web Token structure?</strong></p>
+<p>JWTs consist of three parts separated by dots (.), which are:</p>
+<li><strong>Header</strong></li>
+<p>The header typically consists of two parts: the type of the token, which is JWT, and the hashing algorithm such as HMAC SHA256 or RSA.</p>
+<p>For example:</p>
+<p>{</p>
+<p> 'alg': 'HS256',</p>
+<p> 'typ': 'JWT'</p>
+<p> }</p>
+  <p>Then, this JSON is Base64Url encoded to form the first part of the JWT.</p>
+<li><strong>Payload</strong></li>
+<p>The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional metadata. There are three types of claims: reserved, public, and private claims.</p>
+<li><strong>Reserved claims:</strong> These are a set of predefined claims, which are not mandatory but recommended, thought to provide a set of useful, interoperable claims. Some of them are: <strong>iss</strong> (issuer), <strong>exp</strong> (expiration time), <strong>sub</strong> (subject), <strong>aud</strong> (audience), among others.</li>
+<p>Notice that the claim names are only three characters long as JWT is meant to be compact.</p>
+<li><strong>Public claims:</strong> These can be defined at will by those using JWTs. But to avoid collisions they should be defined in the IANA JSON Web Token Registry or be defined as a URI that contains a collision resistant namespace.</li>
+<li><strong>Private claims:</strong> These are the custom claims created to share information between parties that agree on using them.</li>
+<p>An example of payload could be:</p>
+<p>{</p>
+<p>'sub': '1234567890',</p>
+<p>'name': 'John Doe',</p>
+<p>'admin': true</p>
+<p>}</p>
+  <p>The payload is then Base64Url encoded to form the second part of the JWT.</p>
+<li><strong>Signature</strong></li>
+<p>To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.</p>
+<p>For example if you want to use the HMAC SHA256 algorithm, the signature will be created in the following way.</p>
+<p>HMACSHA256(</p>
+<p>base64UrlEncode(header) + '.' +</p>
+<p>base64UrlEncode(payload),</p>
+<p>secret)</p>
+    <p>The signature is used to verify that the sender of the JWT is who it says it is and to ensure that the message was’t changed in the way.</p>
+<h4>Putting all together</h4>
+<p>The output is three Base64 strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact compared to XML-based standards such as SAML.</p>
+<h1>Week-08: Develop, Debug, Learn</h1>
+<li>
+    <a
+      href="https://www.youtube.com/watch?v=m4t7cLFksls"
+      ><strong>JavaScript Video Lesson</strong></a
+    >
+  </li>
+  <hr>
+</main>
+<footer> &copy; 2023 | Portfolio | Joel Ndiba Mwaura </footer> 
+</body>
+</html>
