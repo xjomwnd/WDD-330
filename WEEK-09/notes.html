@@ -21,7 +21,28 @@
     </header>
     <main>
         <h1>Week 09 Notes</h1>
-        <h3 class="notes">23 April 2023</h3>
+        <h3 class="notes">11 May 2023</h3>
+    <h1>Variable scope, closure</h1>
+    <p>JavaScript is a very function-oriented language. It gives us a lot of freedom. A function can be created at any moment, passed as an argument to another function, and then called from a totally different place of code later.</p>
+    <p>We already know that a function can access variables outside of it (“outer” variables).</p>
+    <p>But what happens if outer variables change since a function is created? Will the function get newer values or the old ones?</p>
+    <p>And what if a function is passed along as an argument and called from another place of code, will it get access to outer variables at the new place?</p>
+    <p>In JavaScript, there are 3 ways to declare a variable: let, const (the modern ones), and var (the remnant of the past).</p>
+
+    <h2>Nested functions</h2>
+    <p>A function is called “nested” when it is created inside another function.</p>
+    <p>It is easily possible to do this with JavaScript.</p>
+    <p>We can use it to organize our code, like this:</p>
+    <li>function sayHiBye(firstName,lastName) {</li>
+    <li>// helper nested function to use below function getFullName() {</li>
+    <li>return firstName + " " + lastName; }</li>
+    <li>alert( "Hello, " + getFullName() );</li>
+    <li>alert( "Bye, " + getFullName() ); }</li>
+
+
+
+
+       <hr>
         
     <p>My three major questions in the week-02 learning are:</p>
 <li>1. What is debugging and why is it important? (Answered)</li>
