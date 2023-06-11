@@ -121,6 +121,17 @@
     <li>6. </li>
     <li>7. let curriedSum = _.curry(sum); // using _.curry from lodash library</li>
     <li>8. alert( curriedSum(1)(2) ); // 3, called partially</li>
+
+    <h2>Summary</h2>
+    <p>Currying is a transform that makes f(a,b,c) callable as f(a)(b)(c). JavaScript implementations usually both keep the function callable normally and return the partial if the arguments count is not enough.</p>
+    <p>Currying allows us to easily get partials. As we’ve seen in the logging example, after currying the three argument universal function log(date, importance, message) gives us partials when called with one argument (like log(date)) or two arguments (like log(date, importance)).</p>
+    
+
+
+
+
+
+
     <li><a href="https://javascript.info/closure">Variable Scope, Closure</a></li>
     <li><a href="https://javascript.info/currying-partials">Currying</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Drawing_graphics"> Web APIs: Drawing Graphics</a></li>  
