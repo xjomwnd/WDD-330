@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=\, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Week 4 Notes</title>
+        <link rel="stylesheet" href="main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@423&display=swap" rel="stylesheet">
+    </head>
+  <body>
+    <div id="content">
+      <header class="headerBanner">
+        <div>
+          <h1>Week-04 Notes</h1>
+        </div>
+      </header>
+      <main>
+        <h1>Debugging in the browser</h1>
+        <hr />
+        <p>
+            Debugging is the process of finding and fixing errors within a script. All modern browsers and most other environments support debugging tools – a special UI in developer tools that makes debugging much easier. It also allows to trace the code step by step to see what exactly is going on. 
+        </p>
+        <h2>The “Sources” panel</h2>
+        <p>Turn on developer tools with F12 (Mac: Cmd+Opt+I).</p>
+        <P>The Sources panel has 3 parts:</P>
+        <ol>
+            <li>The File Navigator pane lists HTML, JavaScript, CSS and other files, including images that are attached to the page. Chrome extensions may appear here too.</li>
+            <li>The Code Editor pane shows the source code</li>
+            <li>The JavaScript Debugging pane is for debugging, we’ll explore it soon.
+            </li>
+          </ol>
+        <h2>Console</h2>
+        <p>If we press Esc, then a console opens below. We can type commands there and press Enter to execute.</p>
+        <p>After a statement is executed, its result is shown.</p>
+        <h2>Breakpoints</h2>
+        <p>A breakpoint is a point of code where the debugger will automatically pause the JavaScript execution.</p>
+        <p>While the code is paused, we can examine current variables, execute commands in the console etc. In other words, we can debug it.</p>
+        <h3>Conditional breakpoints</h3>
+        <p>Right click on the line number allows to create a conditional breakpoint. It only triggers when the given expression, that you should provide when you create it, is truthy.</p>
+        <p>That’s handy when we need to stop only for a certain variable value or for certain function parameters.</p>
+        <h2>The command “debugger”</h2>
+        <p>We can also pause the code by using the debugger command in it, like this:</p>
+        <p>function hello(name) { let phrase = `Hello, ${name}!`;   debugger;// <-- the debugger stops here say(phrase); }</p>
+        <h2>Pause and look around</h2>
+        <p>In our example, hello() is called during the page load, so the easiest way to activate the debugger (after we’ve set the breakpoints) is to reload the page.</p>
+        <p>So let’s press F5 (Windows, Linux) or Cmd+R (Mac).</p>
+        <p>Please open the informational dropdowns to the right (labeled with arrows). They allow you to examine the current code state:</p>
+        <ol>
+            <li><strong>Watch</strong>– shows current values for any expressions.
+                You can click the plus + and input an expression. The debugger will show its value, automatically recalculating it in the process of execution.</li>
+            <li><strong>Call Stack – shows the nested calls chain.</strong>At the current moment the debugger is inside hello() call, called by a script in index.html (no function there, so it’s called “anonymous”).
+                If you click on a stack item (e.g. “anonymous”), the debugger jumps to the corresponding code, and all its variables can be examined as well.</li>
+            <li><strong>Scope – current variables.</strong>Local shows local function variables. You can also see their values highlighted right over the source.
+                Global has global variables (out of any functions).
+                There’s also this keyword there that we didn’t study yet, but we’ll do that soon.</li>
+          </ol>
+        <h2>Tracing the execution</h2>
+        <p>There are buttons for it at the top of the right panel.</p>
+        <p> – “Step”: run the next command, hotkey F9</p>
+        <p>– “Step over”: run the next command, but don’t go into a function, hotkey F10.</p>
+        <p> – “Step into”, hotkey F11.</p>
+        <p> – “Step out”: continue the execution till the end of the current function, hotkey Shift+F11</p>
+        <p> – enable/disable all breakpoints
+            That button does not move the execution. Just a mass on/off for breakpoints.</p>
+        <p> – enable/disable automatic pause in case of an error
+            When enabled, if the developer tools is open, an error during the script execution automatically pauses it.</p>
+        <h2>Logging</h2>
+        <p>To output something to console from our code, there’s console.log function.</p>
+        <p>Regular users don’t see that output, it is in the console. To see it, either open the Console panel of developer tools or press Esc while in another panel: that opens the console at the bottom.</p>
+        <p>If we have enough logging in our code, then we can see what’s going on from the records, without the debugger.</p>
+        
+        <p>&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&</p>
+        <h1>Coding Style</h1>
+        <hr />
+        <p>Our code must be as clean and easy to read as possible.</p>
+        <p>That is actually the art of programming – to take a complex task and code it in a way that is both correct and human-readable. A good code style greatly assists in that.</p>
+        <h2>Syntax</h2>
+        <p>All syntax rules described in this chapter (and in the style guides referenced) aim to increase the readability of your code. All of them are debatable.</p>
+        <p>When we think about writing “better” code, the questions we should ask ourselves are: “What makes the code more readable and easier to understand?” and “What can help us avoid errors?” These are the main things to keep in mind when choosing and debating code styles.</p>
+        <p>Reading popular style guides will allow you to keep up to date with the latest ideas about code style trends and best practices.</p>
+        <p>&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&</p>
+        <h1>Error handling, "try...catch"</h1>
+        <hr />
+        <p>No matter how great we are at programming, sometimes our scripts have errors. They may occur because of our mistakes, an unexpected user input, an erroneous server response, and for a thousand other reasons.</p>
+        <p>Usually, a script “dies” (immediately stops) in case of an error, printing it to console.</p>
+        <p>But there’s a syntax construct try...catch that allows us to “catch” errors so the script can, instead of dying, do something more reasonable.</p>
+        <p>The try...catch construct has two main blocks: try, and then catch:</p>
+        <p>try { 
+            // code…
+            
+             } catch (err) {
+            
+             // error handling
+            
+             }
+            </p>
+        <p>It works like this:</p>
+        <ol>
+            <li>First, the code in try {...} is executed</li>
+            <li>If there were no errors, then catch (err) is ignored: the execution reaches the end of try and goes on, skipping catch.</li>
+            <li>If an error occurs, then the try execution is stopped, and control flows to the beginning of catch (err). The err variable (we can use any name for it) will contain an error object with details about what happened.
+            </li>
+          </ol>
+        <h2>ghftr</h2>
+        <p></p>
+        <p>debugging</p>
+        <p></p>
+        <h2>Reading</h2>
+        <ol>
+          <li>
+            Read
+            <a
+              href="https://javascript.info/debugging-chrome"
+              target="_blank"
+              rel="noreferrer"
+            >3.1 Debugging in the browser</a>
+          </li>
+          <li>
+            Read
+            <a
+              href="https://javascript.info/coding-style"
+              target="_blank"
+              rel="noreferrer"
+              >3.2 Coding Style</a>
+          </li>
+          <li>
+            Read
+            <a
+            href="https://javascript.info/try-catch"
+            target="_blank"
+            rel="noreferrer"
+            >10.1 Error handling, "try...catch"</a>
+          </li>
+      </main>
+    </div>
+   
+  </body>
+</html>
