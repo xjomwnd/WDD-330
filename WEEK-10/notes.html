@@ -24,10 +24,20 @@
 <h3>Function</h3>
 <p>A function execution context is created whenever a function is called, representing the function's local scope.</p>
 <h2>Phases of the JavaScript Execution Context</h2>
-<p>The Execution context is created in two stages, the creation and the execution stage.</p>
 <p>There are two phases of JavaScript execution context:</p>
-<li>1.<strong>Creation phase: </strong>In this phase, the JavaScript engine creates the execution context and sets up the script's environment. It determines the values of variables and functions and sets up the scope chain for the execution context.</li>
-<li>2.<strong>Execution phase:</strong> In this phase, the JavaScript engine executes the code in the execution context. It processes any statements or expressions in the script and evaluates any function calls.</li>
+<li>1.<strong>Creation phase: </strong>In this phase, the JavaScript engine creates the execution context and sets up the script's environment. 
+    It determines the values of variables and functions and sets up the scope chain for the execution context.</li>
+<li>2.<strong>Execution phase:</strong> In this phase, the JavaScript engine executes the code in the execution context. 
+    It processes any statements or expressions in the script and evaluates any function calls.</li>
+<p>Everything in JS happens inside this execution context. It is divided into two components. One is memory and the other is code. 
+   It is important to remember that these phases and components are applicable to both global and functional execution contexts.</p>
+<p>At the very beginning, the JavaScript engine executes the entire source code, 
+    creates a global execution context, and then does the following things:</p>
+<li>1. Creates a global object that is window in the browser and global in NodeJs.</li>
+<li>2. Sets up a memory for storing variables and functions.</li>
+<li>3. Stores the variables with values as undefined and function references.</li>
+
+
 </main>
     <footer> &copy; 2023 | Portfolio | Joel Ndiba Mwaura </footer>
 </body>
