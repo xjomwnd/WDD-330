@@ -12,16 +12,23 @@
 <body>
     <main>
 <h1>An Introduction to Functions, Execution Context and the Call Stack</h1>
-<p>The Execution Context is an abstract environment created by JS to execute code.</p> 
+<p>The Execution Context is an abstract environment created by JS to execute code.</p>
+<P>What is the Execution Context?</P>
+<P>When the JavaScript engine scans a script file, it makes an environment called the<strong>Execution Context</strong> that handles the entire transformation and execution of the code.</P>
+<P>During the context runtime, the parser parses the source code and allocates memory for the variables and functions. The source code is generated and gets executed.</P> 
 </strong>The Execution Stack is used to execute functions and keep track of all the Execution Context created.</p> 
-<p>The Execution context is created in two stages, the creation and the execution stage.</p>
 
-<p>There are two types of execution contexts: <strong>global</strong> and <strong>function</strong>.</p>
+<p>There are two types of execution contexts: <strong>Global</strong> and <strong>Function</strong>.</p>
 <h3>Global</h3> 
 <p>The global execution context is created when a JavaScript script first starts to run, and it represents the global scope in JavaScript.</p> 
 <h3>Function</h3>
 <p>A function execution context is created whenever a function is called, representing the function's local scope.</p>
-    </main>
+<h2>Phases of the JavaScript Execution Context</h2>
+<p>The Execution context is created in two stages, the creation and the execution stage.</p>
+<p>There are two phases of JavaScript execution context:</p>
+<li>1.<strong>Creation phase: </strong>In this phase, the JavaScript engine creates the execution context and sets up the script's environment. It determines the values of variables and functions and sets up the scope chain for the execution context.</li>
+<li>2.<strong>Execution phase:</strong> In this phase, the JavaScript engine executes the code in the execution context. It processes any statements or expressions in the script and evaluates any function calls.</li>
+</main>
     <footer> &copy; 2023 | Portfolio | Joel Ndiba Mwaura </footer>
 </body>
 </html>
