@@ -80,6 +80,11 @@
 <p>Then getResult() will call funcB(). At this point, funcB's context will be stored on the top of the stack. Then it will start executing and call another function funcA(). Similarly, funcA's context will be pushed.</p>
 <p>Once execution of each function is done, it will be removed from the call stack. The following picture depicts the entire process of the execution:</p>
 
+
+
+<p><strong>Call Stack </strong></p>
+<p>The call stack has its own fixed size depending on the system or browser. If the number of contexts exceeds the limit, then a stack overflow error will occur. This happens with a recursive function that has no base condition.</p>
+
 <h3>Conclusion</h3>
 <p>In conclusion, JavaScript execution context is a crucial part of understanding how JavaScript works behind the scenes. It determines the environment in which code is executed and what variables and functions are available to use.</p>
 <p>The creation phase includes creating the global and function execution contexts, creating the scope chain, and allocating memories for the variables and functions. During the execution phase, the JavaScript engine executes the code line by line. This includes evaluating and executing statements.</p>
