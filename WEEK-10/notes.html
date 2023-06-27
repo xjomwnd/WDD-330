@@ -79,9 +79,6 @@
 <p>First it allocates memory for funcA, funcB, the getResult function, and the res variable. Then it invokes getResult(), which will be pushed on the call stack.</p>
 <p>Then getResult() will call funcB(). At this point, funcB's context will be stored on the top of the stack. Then it will start executing and call another function funcA(). Similarly, funcA's context will be pushed.</p>
 <p>Once execution of each function is done, it will be removed from the call stack. The following picture depicts the entire process of the execution:</p>
-
-
-
 <p><strong>Call Stack </strong></p>
 <p>The call stack has its own fixed size depending on the system or browser. If the number of contexts exceeds the limit, then a stack overflow error will occur. This happens with a recursive function that has no base condition.</p>
 
